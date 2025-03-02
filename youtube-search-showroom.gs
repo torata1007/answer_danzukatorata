@@ -1,5 +1,7 @@
 function getShowroomVideos() {
-  var query = 'SHOWROOM', results = [], nextPageToken = '';
+  var query = 'SHOWROOM';
+  var results = [];
+  var nextPageToken = '';
   
   while (results.length < 100) {
     var response = YouTube.Search.list('id,snippet', { q: query, maxResults: 50, pageToken: nextPageToken });
