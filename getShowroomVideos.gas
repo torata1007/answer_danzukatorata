@@ -1,0 +1,20 @@
+function getShowroomVideos() {
+  var query = 'SHOWROOM';
+  var results = [];
+  var nextPageToken = null;
+  while (results.length < 100) {
+    var response = YouTube.Search.list('id,snippet', { 
+      q: query, 
+      maxResults: 50, 
+      pageToken: nextPageToken
+    });    
+    for (var i = 0; i < response.items.length; i++) {
+      var item = response.items[i];
+      if (results.length < 100) {
+        results.push("https://www.youtube.com/watch?v=" + item.id.videoId);
+      }
+    }
+    nextPageToken = response.nextPageToken;
+  }
+  results.forEach(url => Logger.log(url));
+}
