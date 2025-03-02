@@ -1,0 +1,21 @@
+function getApexLegendsVideos() {
+  var query = 'ApexLegends';
+  var results = [];
+  var lastThreeDays = new Date();
+  lastThreeDays.setDate(lastThreeDays.getDate() - 3);
+  lastThreeDays = lastThreeDays.toISOString();
+  var response = YouTube.Search.list('id,snippet', {
+    q: 'Apex Legends', 
+    regionCode: 'JP', 
+    publishedAfter: lastThreeDays, 
+    maxResults: 10, 
+    order: 'viewCount'
+  });
+  for (var i = 0; i < response.items.length; i++) {
+    var item = response.items[i];
+    if (item.id.videoId) {
+      results.push("https://www.youtube.com/watch?v=" + item.id.videoId);
+    }
+  }
+  results.forEach(url => Logger.log(url));
+}
