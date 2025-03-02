@@ -1,1 +1,7 @@
-# youtube-api-showroom-search
+SHOWROOM株式会社 採用担当者様
+お世話になっております。團塚です。
+いただいた以下の課題への回答スクリプトをこちらのリポジトリへ追加しております。
+課題：・YouTube Data APIを利用し
+youtubeからタイトルに「SHOWROOM」が入ってるyoutubeの動画(youtubeページ）
+のURLを最新順に100件取得し出力するスクリプトの作成しgithubで見れる状態にしgithubのurlを送ってください。
+お忙しいところ恐れ入りますがご確認のほどよろしくお願いいたします。
